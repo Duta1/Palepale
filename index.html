@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Permintaan Maaf untuk Tuan Putri VINA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#fdecef;
+      --bg2:#fff6f6;
+      --primary:#e91e63;
+      --text:#2c2c2c;
+      --muted:#6b7280;
+      --ring: rgba(233,30,99,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 20% 10%, var(--bg1), transparent 60%),
+                  radial-gradient(1000px 700px at 80% 90%, var(--bg2), transparent 60%),
+                  #fff;
+      color:var(--text);
+      display:grid; place-items:center; padding:24px;
+    }
+    .card{ 
+      width:min(720px, 100%); 
+      background:#ffffffb3; 
+      backdrop-filter: blur(8px);
+      border:1px solid #ffd6e3;
+      border-radius:28px; 
+      box-shadow: 0 10px 30px rgba(233,30,99,.08);
+      padding:28px; 
+      position:relative;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px; color:var(--primary); background:#fff0f5; padding:6px 10px; border-radius:999px; border:1px solid #ffd6e3;
+    }
+    h1{ font-size:clamp(28px, 4vw, 40px); margin:12px 0 4px 0; line-height:1.1 }
+    h1 .heart{ color:var(--primary); display:inline-block; transform-origin:center; animation:pulse 1.6s infinite }
+    @keyframes pulse{ 0%,100%{ transform:scale(1)} 50%{ transform:scale(1.1)} }
+    p{ font-size:16px; line-height:1.8; color:#333; margin:12px 0 }
+    .muted{ color:var(--muted) }
+    .list{ margin:14px 0 0 0; padding:0 0 0 18px }
+    .list li{ margin:6px 0 }
+    .cta{
+      display:flex; flex-wrap:wrap; gap:12px; margin-top:20px
+    }
+    .btn{
+      appearance:none; border:0; background:var(--primary); color:#fff; font-weight:700; 
+      padding:12px 18px; border-radius:14px; cursor:pointer; box-shadow:0 8px 18px var(--ring);
+      transition: transform .08s ease, box-shadow .2s ease, filter .2s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); filter:saturate(1.05); box-shadow:0 12px 24px var(--ring) }
+    .btn.secondary{ background:#ffffff; color:var(--primary); border:1px solid #ffd6e3 }footer{ margin-top:22px; font-size:12px; color:var(--muted); display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap }
+.signature{ display:flex; align-items:center; gap:10px }
+.sigline{ height:1px; width:140px; background:#ffd6e3 }
+
+.floating{
+  position:absolute; inset: -8px -8px auto auto; pointer-events:none; font-size:22px; opacity:.85
+}
+.bubble{ position:absolute; border-radius:999px; filter:blur(10px); opacity:.6 }
+.b1{ width:140px; height:140px; background:#ffd1e1; top:-40px; left:-40px }
+.b2{ width:90px; height:90px; background:#ffe6ef; right:-30px; bottom:-30px }
+
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="title">
+    <div class="bubble b1" aria-hidden="true"></div>
+    <div class="bubble b2" aria-hidden="true"></div><span class="badge" aria-label="Sapaan lembut">💌 Surat Maaf</span>
+<h1 id="title">Untuk Tuan Putri <span style="white-space:nowrap">Princess VINA</span> <span style="font-weight:300">imut kiut</span> <span class="heart">♥</span></h1>
+
+<p>Maafkan aku. Aku telah salah berucap dan membuat hati Tuan Putri terluka. Tidak ada alasan yang bisa membenarkan kata-kataku. Aku sungguh menyesal.</p>
+<p>Dengan sepenuh hati, aku ingin memperbaiki semuanya. Mulai hari ini, aku berjanji untuk lebih berhati-hati, lebih lembut, dan lebih pengertian.</p>
+
+<ul class="list">
+  <li>Aku mengakui kesalahanku tanpa pembelaan.</li>
+  <li>Admin selalu benar.</li>
+  <Li>Admin Selalu Benar.</Li>
+</ul>
+
+<div class="cta">
+  <button class="btn" onclick="alert('Terima kasih sudah memberi kesempatan. Aku akan menjaga kata-kataku. 🤍')">Maafkan aku, ya 🙏</button>
+  <button class="btn secondary" onclick="document.getElementById('janji').scrollIntoView({behavior:'smooth'})">Lihat Janjiku</button>
+</div>
+
+<p id="janji" class="muted">"Minta maaf yaaaaaaaaa.”</p>
+
+<footer>
+  <div class="signature">
+    <span class="sigline"></span>
+    <span>Tertanda: <strong><em>[Duta Wahyu Utomo]</em></strong></span>
+  </div>
+  <div>
+    <span id="today"></span>
+  </div>
+</footer>
+
+<div class="floating" aria-hidden="true">🌸</div>
+
+  </main>  <script>
+    // Tampilkan tanggal hari ini secara otomatis
+    const now = new Date();
+    const opts = { weekday:'long', year:'numeric', month:'long', day:'numeric' };
+    document.getElementById('today').textContent = now.toLocaleDateString('id-ID', opts);
+  </script></body>
+  </html>
